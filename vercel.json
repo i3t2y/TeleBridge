@@ -2,6 +2,10 @@
   "version": 2,
   "rewrites": [
     {
+      "source": "/bot/bot:token/:method",
+      "destination": "/api/handler"
+    },
+    {
       "source": "/(.*)",
       "destination": "/api/handler"
     }
