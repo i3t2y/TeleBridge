@@ -232,6 +232,8 @@ export default async function handler(req, res) {
       const fileRes = await fetch(`${TELEGRAM_API}/file/bot${token}/${getFileData.result.file_path}`);
       const buffer = await fileRes.arrayBuffer();
       res.setHeader("Content-Type", "application/octet-stream");
+      res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+      res.setHeader("Pragma", "no-cache");      
       return res.send(Buffer.from(buffer));
     }
 
