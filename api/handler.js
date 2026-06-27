@@ -184,7 +184,7 @@ export default async function handler(req, res) {
     }
 
     // 🟡 Route 2: n8n → Vercel → Telegram
-    const botRoute = path.match(/^\/bot([^/]+)\/(.+)$/);
+    const botRoute = path.match(/^\/bot\/?([^/]+)\/(.+)$/);
     if (botRoute) {
       const [, token, method] = botRoute;
 
