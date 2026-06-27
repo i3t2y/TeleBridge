@@ -105,6 +105,7 @@ async function parseRawBody(req) {
 export default async function handler(req, res) {
   const fullUrl = req.url;
   const path = fullUrl.split("?")[0];
+  console.log("TeleBridge request:", req.method, path); // ← 加这行
   const query = parseQuery(fullUrl); // الآن parseQuery معرفة ولن تعطي خطأ
 
   try {
